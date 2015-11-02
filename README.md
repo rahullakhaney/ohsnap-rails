@@ -1,6 +1,6 @@
 # Ohsnap
 
-A ruby gem for ohsnap.js [developed by justin domingue](https://github.com/justindomingue)
+A ruby gem for ohsnap.js [library by justin domingue](https://github.com/justindomingue)
 
 A simple notification jQuery/Zepto library designed to be used in mobile apps
 
