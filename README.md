@@ -1,5 +1,7 @@
 # Ohsnap
 
+[![Gem Version](https://badge.fury.io/rb/ohsnap-rails.svg)](https://badge.fury.io/rb/ohsnap-rails)
+
 A ruby gem for ohsnap.js [library by justin domingue](https://github.com/justindomingue)
 
 A simple notification jQuery/Zepto library designed to be used in mobile apps
