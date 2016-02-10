@@ -32,10 +32,41 @@ To your ```application.js``` file, add:
 //= require ohsnap
 ```
 
-In your html content add a div:
+In your application helper app/helpers/application_helper.rb add:
+
+```Ruby
+module ApplicationHelper
+    ALERT_TYPES = [:blue, :green, :orange, :red] unless const_defined?(:ALERT_TYPES)
+    def snap_flash(options = {})
+        flash_messages = []
+        flash.each do |type, message|
+          next if message.blank?
+
+          type = type.to_sym
+          type = :blue if type == :info
+          type = :green if type == :notice
+          type = :orange  if type == :alert
+          type = :red  if type == :error
+
+          next unless ALERT_TYPES.include?(type)
+          Array(message).each do |msg|
+            flash_messages << "ohSnap('#{msg}', {color: '#{type.to_s}', duration: '7000'});" if msg
+          end
+        end
+        javascript_tag flash_messages.join("\n").html_safe
+    end
+end
+```
+
+In your application.html file here app/views/layout/application.html.erb add:
+
 ```HTML
 <div id="ohsnap"></div>
+<%= snap_flash %>
 ```
+
+Credits to [Dmytro Koval](https://github.com/dawidof) for making pointing out a typo and for the application_helper.
+
 
 Ohsnap created div with classes .alert .alert-color .So you would need to have:
 
