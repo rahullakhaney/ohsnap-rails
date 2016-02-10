@@ -65,7 +65,7 @@ In your application.html file here app/views/layout/application.html.erb add:
 <%= snap_flash %>
 ```
 
-Credits to [Dmytro Koval](https://github.com/dawidof) for making pointing out a typo and for the application_helper.
+Credits to [Dmytro Koval](https://github.com/dawidof) for pointing out a typo and for the application_helper.
 
 
 Ohsnap created div with classes .alert .alert-color .So you would need to have:
